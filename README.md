@@ -8,4 +8,7 @@ Will hopefully be in a playable state soon
 
 # Plot:
 
+There are a total of 8 Dungeons in the game, each holding a piece of the orb of dominance. Once all of the pieces have been put together, the Orb of Dominance is created.
+
+The dungeons are as follows:
 
