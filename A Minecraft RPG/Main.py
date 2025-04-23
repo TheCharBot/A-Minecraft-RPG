@@ -31,13 +31,13 @@ def map(x, y, map):
             x = 0
 class Player(pygame.sprite.Sprite):
     def __init__(self):
-        super().__init__()
+        pygame.sprite.Sprite.__init__(self)
         self.speed = 1
         self.x = 0
         self.y = 0
         self.direction = pygame.Vector2()
-        self.texture = pygame.image.load("textures\\player\\playerdown\\playerdown1.png").convert_alpha()
-        self.rect = self.texture.get_rect(center = (WINDOW_WIDTH/2, WINDOW_HEIGHT/2))
+        self.image = pygame.image.load("textures\\player\\playerdown\\playerdown1.png").convert_alpha()
+        self.rect = self.image.get_rect(center = (WINDOW_WIDTH/2, WINDOW_HEIGHT/2))
     def update(self, dt):
         keys = pygame.key.get_pressed()
         self.direction.x = int(keys[pygame.K_d]) - int(keys[pygame.K_a])
@@ -59,7 +59,8 @@ while running:
             running = False
     all_sprites.update(dt)
     display_surface.fill("black")
+    map(0,0,overworld)
     all_sprites.draw(display_surface)
-    #map(0,0,overworld)
+    
     pygame.display.flip()
 pygame.quit()
