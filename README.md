@@ -10,5 +10,8 @@ Will hopefully be in a playable state soon
 
 There are a total of 8 Dungeons in the game, each holding a piece of the orb of dominance. Once all of the pieces have been put together, the Orb of Dominance is created.
 
-The dungeons are as follows:
+The dungeons are as follows:  
+1. The Mineshaft
+2. The Redstone Mine
+3. 
 
