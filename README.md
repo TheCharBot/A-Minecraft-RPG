@@ -19,7 +19,7 @@ The dungeons are as follows:
 6. The Ghast Bridge
 7. Steve's World
 8. Piglin Raid
-   Then the battle for the staff of dominance
+   Then the battle for the staff of dominance  
    After that, the battle for the Orb of Dominance
 10. (Optional) The End
 
