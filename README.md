@@ -8,7 +8,7 @@ Will hopefully be in a playable state soon
 
 # Plot:
 
-There are a total of 8 Dungeons in the game, each holding a piece of the orb of dominance. Once all of the pieces have been put together, the Orb of Dominance is created.
+There are a total of 8 (main) Dungeons in the game, each holding a piece of the orb of dominance. Once all of the pieces have been put together, the Orb of Dominance is created.
 
 The dungeons are as follows:  
 1. The Mineshaft
@@ -17,5 +17,10 @@ The dungeons are as follows:
 4. The Creeper Farm
 5. The Woodland Mansion
 6. The Ghast Bridge
+7. Steve's World
+8. Piglin Raid
+   Then the battle for the staff of dominance
+   After that, the battle for the Orb of Dominance
+10. (Optional) The End
 
 # This is still indev right now
