@@ -23,4 +23,28 @@ The dungeons are as follows:
    After that, the battle for the Orb of Dominance
 10. (Optional) The End
 
+Bosses (respective to the order of dungeons):  
+1. Miner Giant
+2. Redstone Heart
+3. Diamond Shell Enderman
+4. Omega Creeper
+5. Hell Ghast  
+6. Lava Chicken
+7. General Chungus
+8. Chicken Jockey
+9.  (Optional) Ender Dragon
+10.  Malgosha
+
+And, Mini-Bosses:  
+1. Diamond Armor Zombie  
+2. Redstone Golem  
+3. Minecart Monster
+4. Giga Creeper
+5. Battle Ghast
+6. Clown Golem
+7. Piglin Brute
+8. Enderman  
+9. Great Hog
+
+
 # This is still indev right now
