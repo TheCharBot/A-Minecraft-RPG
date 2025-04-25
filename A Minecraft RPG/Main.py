@@ -1,5 +1,5 @@
 import pygame
-
+import Inventory
 import Maps
 
 
