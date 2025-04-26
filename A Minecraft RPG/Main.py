@@ -86,7 +86,7 @@ class Player(pygame.sprite.Sprite):
             elif self.facing == "down":
                 self.image = pygame.image.load("textures\\player\\playerdown\\playerdown1.png").convert_alpha()
             else:
-                self.image = pygame.image.load("textures\\player\\playerdown\\playerdown1.png").convert_alpha()
+                self.image = pygame.image.load("textures\\player\\idle\\idle.png").convert_alpha()
         else:
             if self.facing == "right":
                 self.image = pygame.image.load("textures\\player\\playerright\\playerright2.png").convert_alpha()
@@ -97,7 +97,7 @@ class Player(pygame.sprite.Sprite):
             elif self.facing == "down":
                 self.image = pygame.image.load("textures\\player\\playerdown\\playerdown2.png").convert_alpha()
             else:
-                self.image = pygame.image.load("textures\\player\\playerdown\\playerdown1.png").convert_alpha()
+                self.image = pygame.image.load("textures\\player\\idle\\idle.png").convert_alpha()
 def is_even(number):
   return number % 2 == 0
 
