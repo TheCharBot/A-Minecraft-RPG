@@ -87,6 +87,9 @@ class Player(pygame.sprite.Sprite):
             wall_touched = "bottom"
         
         print(wall_touched)
+        ### ATTACKING AND PLACING ###
+        if pygame.key.get_just_pressed()[pygame.K_x]:
+            print("X key just pressed")
         
     def animate(self):
         
@@ -112,6 +115,7 @@ class Player(pygame.sprite.Sprite):
                 self.image = pygame.image.load("textures\\player\\playerdown\\playerdown2.png").convert_alpha()
             else:
                 self.image = pygame.image.load("textures\\player\\idle\\idle.png").convert_alpha()
+        
 class Hotbar(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
@@ -126,10 +130,19 @@ class Hotbar(pygame.sprite.Sprite):
 
 ####### FIGURE OUT DICTIONARIES ######
 
+my_info = {
+    "name": "Alice",
+    "age": 30,
+    "city": "New York",
+    "occupation": "Engineer"
+}
 
 def is_even(number):
   return number % 2 == 0
-
+def check_for_input():
+    keys = pygame.key.get_pressed()
+    if keys == int(keys[pygame.K_RIGHT]):
+        player.attack()
 
 
 
@@ -147,11 +160,14 @@ all_sprites.add(player)
 
 while running:
     dt = clock.tick(20) / 1000
+    keys = pygame.key.get_pressed
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
         elif event.type == TASK_ONE_TRIGGER:
             animationState +=1
+    
+    
     all_sprites.update(dt)
     
     display_surface.fill("black")
