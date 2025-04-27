@@ -126,12 +126,6 @@ class Hotbar(pygame.sprite.Sprite):
 
 ####### FIGURE OUT DICTIONARIES ######
 
-my_info = {
-    "name": "Alice",
-    "age": 30,
-    "city": "New York",
-    "occupation": "Engineer"
-}
 
 def is_even(number):
   return number % 2 == 0
