@@ -1,11 +1,10 @@
 import pygame
-import Inventory
 import Maps
 
 
 # Setup
 pygame.init()
-WINDOW_WIDTH, WINDOW_HEIGHT = 500, 500
+WINDOW_WIDTH, WINDOW_HEIGHT = 500, 567
 display_surface = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
 pygame.display.set_caption("A Minecraft RPG")
 
@@ -36,7 +35,7 @@ class Player(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
         self.facing = "idle"
-        self.speed = 150
+        self.speed = 200
         self.x = 0
         self.y = 0
         self.direction = pygame.Vector2()
@@ -71,9 +70,24 @@ class Player(pygame.sprite.Sprite):
         # Recalculating psition and movement
         self.rect.x += self.direction.x * self.speed * dt
         self.rect.y += self.direction.y * self.speed * dt
+
+        global wall_touched
+        wall_touched = "none"
+        if self.rect.x < 0:
+            self.rect.x = 0
+            wall_touched = "left"
+        elif self.rect.x > 450:
+            self.rect.x = 450
+            wall_touched = "right"
+        if self.rect.y < 0:
+            self.rect.y = 0
+            wall_touched = "top"
+        elif self.rect.y > 450:
+            self.rect.y = 450
+            wall_touched = "bottom"
         
-        # self.directionsaveX = self.direction.x
-        # self.directionsaveY = self.direction.y
+        print(wall_touched)
+        
     def animate(self):
         
         if is_even(animationState):
@@ -98,6 +112,27 @@ class Player(pygame.sprite.Sprite):
                 self.image = pygame.image.load("textures\\player\\playerdown\\playerdown2.png").convert_alpha()
             else:
                 self.image = pygame.image.load("textures\\player\\idle\\idle.png").convert_alpha()
+class Hotbar(pygame.sprite.Sprite):
+    def __init__(self):
+        pygame.sprite.Sprite.__init__(self)
+        
+        
+        self.x = 0
+        self.y = 480
+        self.direction = pygame.Vector2()
+        self.image = pygame.image.load("textures\\inventory\\hotbar.png")
+        self.rect = self.image.get_rect(center = (WINDOW_WIDTH/2, WINDOW_HEIGHT-33))
+
+
+####### FIGURE OUT DICTIONARIES ######
+
+my_info = {
+    "name": "Alice",
+    "age": 30,
+    "city": "New York",
+    "occupation": "Engineer"
+}
+
 def is_even(number):
   return number % 2 == 0
 
@@ -112,6 +147,8 @@ pygame.time.set_timer(TASK_ONE_TRIGGER, 200)
 
 all_sprites = pygame.sprite.Group()
 player = Player()
+hotbar = Hotbar()
+all_sprites.add(hotbar)
 all_sprites.add(player)
 
 while running:
