@@ -52,4 +52,3 @@ And, Mini-Bosses:
 9. Great Hog
 
 
-# This is still indev right now
