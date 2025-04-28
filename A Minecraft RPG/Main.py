@@ -86,10 +86,6 @@ class Player(pygame.sprite.Sprite):
             self.rect.y = 450
             wall_touched = "bottom"
         
-        print(wall_touched)
-        ### ATTACKING AND PLACING ###
-        if pygame.key.get_just_pressed()[pygame.K_x]:
-            print("X key just pressed")
         
     def animate(self):
         
