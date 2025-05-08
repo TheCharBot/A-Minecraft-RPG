@@ -1,5 +1,7 @@
 import pygame
 import Maps
+import Items
+
 
 
 # Setup
@@ -13,24 +15,34 @@ running = True
 clock = pygame.time.Clock()
 x = 0
 animationState = 1
-overworld = Maps.overworld1()
-def map(x, y, map):
+
+
+current_map = Maps.a1()
+
+
+collision_rects = []
+def map(map):
+    x = 0
+    y = 0
     for item in map:
         if item == 1:
             mapObject = pygame.image.load("textures\\blocks\\grass\\grassside.png")
-            display_surface.blit(mapObject, (x, y))
-            x += 50
+            collision_rects.append(pygame.Rect(x, y, 50, 50))
         elif item == 2:
             mapObject = pygame.image.load("textures\\blocks\\grass\\grasstop.png")
-            display_surface.blit(mapObject, (x, y))
-            x += 50
         elif item == 3:
             mapObject = pygame.image.load("textures\\blocks\\cobblestone\\cobblestone.png")
-            display_surface.blit(mapObject, (x, y))
-            x += 50
+        elif item == 4:
+            mapObject = pygame.image.load("textures\\blocks\\water\\water.png")
+            collision_rects.append(pygame.Rect(x, y, 50, 50))
+            
+        display_surface.blit(mapObject, (x, y))
+        x += 50
+
         if x == 500 or x >= 500:
             y += 50
             x = 0
+
 class Player(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
@@ -41,15 +53,35 @@ class Player(pygame.sprite.Sprite):
         self.direction = pygame.Vector2()
         self.image = pygame.image.load("textures\\player\\playerdown\\playerdown1.png").convert_alpha()
         self.rect = self.image.get_rect(center = (WINDOW_WIDTH/2, WINDOW_HEIGHT/2))
+    
     def update(self, dt):
         # Key sensing
         keys = pygame.key.get_pressed()
-        
+        colliding = False
+        if colliding == False:
+            playerrectxSAVE = self.rect.x
+            playerrectySAVE = self.rect.y
+            
         # Key and movement calculation
         self.direction.x = int(keys[pygame.K_RIGHT]) - int(keys[pygame.K_LEFT])
         self.direction.y = int(keys[pygame.K_DOWN]) - int(keys[pygame.K_UP])
+        
 
-        # Animation and rotational calculations
+
+        
+        
+            
+        
+        # Normalizing diagonal movemnts with the vector
+        self.direction = (
+            self.direction.normalize() if self.direction else self.direction
+        )
+        
+        # Recalculating psition and movement
+        self.rect.x += self.direction.x * self.speed * dt
+        self.rect.y += self.direction.y * self.speed * dt
+        
+        
         if self.direction.magnitude() > 0: 
             if self.direction.x > 0:
                 self.facing = "right"
@@ -59,18 +91,18 @@ class Player(pygame.sprite.Sprite):
                 self.facing = "up"
             elif self.direction.y > 0:
                 self.facing = "down"
-            
         else: 
             self.facing = "idle"
-        # Normalizing diagonal movemnts with the vector
-        self.direction = (
-            self.direction.normalize() if self.direction else self.direction
-        )
+        for rect in collision_rects:
+            if self.rect.colliderect(rect):
+               
+                
+                
+                self.rect.x = playerrectxSAVE
+                self.rect.y = playerrectySAVE
+                colliding = True
+                break
         
-        # Recalculating psition and movement
-        self.rect.x += self.direction.x * self.speed * dt
-        self.rect.y += self.direction.y * self.speed * dt
-
         global wall_touched
         wall_touched = "none"
         if self.rect.x < 0:
@@ -87,6 +119,18 @@ class Player(pygame.sprite.Sprite):
             wall_touched = "bottom"
         
         
+        ### ATTACKING AND PLACING ###
+        if pygame.key.get_just_pressed()[pygame.K_x]:
+            print("X key just pressed")
+            
+        if pygame.key.get_just_pressed()[pygame.K_z]:
+            print("Z key just pressed")
+        if pygame.key.get_just_pressed()[pygame.K_f]:
+            print("F key just pressed")  
+    
+    
+    
+
     def animate(self):
         
         if is_even(animationState):
@@ -111,7 +155,9 @@ class Player(pygame.sprite.Sprite):
                 self.image = pygame.image.load("textures\\player\\playerdown\\playerdown2.png").convert_alpha()
             else:
                 self.image = pygame.image.load("textures\\player\\idle\\idle.png").convert_alpha()
-        
+class XItem(pygame.sprite.Sprite):
+    def __init__(self):
+        pygame.sprite.Sprite.__init__(self)
 class Hotbar(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
@@ -124,29 +170,23 @@ class Hotbar(pygame.sprite.Sprite):
         self.rect = self.image.get_rect(center = (WINDOW_WIDTH/2, WINDOW_HEIGHT-33))
 
 
-####### FIGURE OUT DICTIONARIES ######
 
-my_info = {
-    "name": "Alice",
-    "age": 30,
-    "city": "New York",
-    "occupation": "Engineer"
-}
+    
+
+
+
 
 def is_even(number):
   return number % 2 == 0
-def check_for_input():
-    keys = pygame.key.get_pressed()
-    if keys == int(keys[pygame.K_RIGHT]):
-        player.attack()
+
 
 
 
     
 
         
-TASK_ONE_TRIGGER = pygame.USEREVENT + 1
-pygame.time.set_timer(TASK_ONE_TRIGGER, 200)
+ANIMATION_STATE_TRIGGER = pygame.USEREVENT + 1
+pygame.time.set_timer(ANIMATION_STATE_TRIGGER, 200)
 
 all_sprites = pygame.sprite.Group()
 player = Player()
@@ -160,7 +200,7 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-        elif event.type == TASK_ONE_TRIGGER:
+        elif event.type == ANIMATION_STATE_TRIGGER:
             animationState +=1
     
     
@@ -168,9 +208,11 @@ while running:
     
     display_surface.fill("black")
     
-    map(0,0,overworld)
+    
     player.animate()
+    map(current_map)
     all_sprites.draw(display_surface)
+    
     
     pygame.display.update()
 pygame.quit()

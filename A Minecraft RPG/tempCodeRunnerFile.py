@@ -1,1 +1,1 @@
-p.__init__()
+map(0,0,current_map)
