@@ -11,6 +11,9 @@ Next Up In Developement:
 2. (postponed) Map System  
 3. Cutscene / Dialogue System
 
+Potential Changes:
+1. Collision System
+
 # Plot:
 
 There are a total of 8 (main) Dungeons in the game, each holding a piece of the orb of dominance. Once all of the pieces have been put together, the Orb of Dominance is created.
