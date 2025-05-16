@@ -27,10 +27,16 @@ class Map(pygame.sprite.Sprite):
     def update(self, map_x, map_y):
         if map_x == 1 and map_y == 1:
             self.current_map = Maps.a1
+            collision_rects.clear()
         elif map_x==1 and map_y == 2:
             self.current_map = Maps.a2
+            collision_rects.clear()
+
         elif map_x==2 and map_y==1:
             self.current_map = Maps.b1
+            collision_rects.clear()
+
+
     
         x = 0
         y = 0
@@ -209,7 +215,8 @@ map = Map()
 all_sprites.add(hotbar)
 all_sprites.add(player)
 
-
+pygame.mixer.music.load("sounds\\Music\\world_explore_main.wav")
+pygame.mixer.music.play(-1)
 # Game Loop
 #current_map = map_check()
 while running:
