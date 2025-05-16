@@ -8,7 +8,7 @@ Will hopefully be in a playable state soon
 
 Next Up In Developement:  
 1. Handheld Items and Inventory System  
-2. (postponed) Map System  
+2. (work in progress) Map System  
 3. Cutscene / Dialogue System
 
 Potential Changes:
