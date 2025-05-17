@@ -7,11 +7,11 @@ A Minecraft RPG is a 2D top-down Zelda-like RPG game based on A Minecraft Movie.
 Will hopefully be in a playable state soon  
 
 Next Up In Developement:  
-1. Soundtrack and SFX  
-2. Handheld Items and Inventory System  
+1. Handheld Items and Inventory System  
+2. Soundtrack and SFX  
 4. Cutscene / Dialogue System  
 
-Potential Changes:
+Potential Changes(in the far future):
 1. Collision System  
 2. Map Movement System  
 
