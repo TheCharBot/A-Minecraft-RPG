@@ -1,6 +1,9 @@
 import pygame
 import Maps
-import Items
+#import Items
+import os
+#import config
+import images
 
 # Setup
 pygame.init()
@@ -11,14 +14,14 @@ pygame.display.set_caption("A Minecraft RPG")
 # Object creation
 running = True
 clock = pygame.time.Clock()
-mapx = 2
+
 animationState = 1
-mapy = 1
+
 
 # Map Setup
 
 collision_rects = []
-current_map = Maps.a2
+
 # Map Drawing Functio
 class Map(pygame.sprite.Sprite):
     def __init__(self):
@@ -31,28 +34,45 @@ class Map(pygame.sprite.Sprite):
         elif map_x==1 and map_y == 2:
             self.current_map = Maps.a2
             collision_rects.clear()
-
         elif map_x==2 and map_y==1:
             self.current_map = Maps.b1
             collision_rects.clear()
-
+        
 
     
         x = 0
         y = 0
         for item in self.current_map:
             if item == 1:
-                self.mapObject = pygame.image.load("textures\\blocks\\grass\\grassside.png")
+                self.mapObject = pygame.image.load(os.path.join(images.grass_side))
                 collision_rects.append(pygame.Rect(x, y, 50, 50))
             elif item == 2:
-                self.mapObject = pygame.image.load("textures\\blocks\\grass\\grasstop.png")
+                self.mapObject = pygame.image.load(os.path.join(images.grass_top))
             elif item == 3:
-                self.mapObject = pygame.image.load("textures\\blocks\\cobblestone\\cobblestone.png")
+                self.mapObject = pygame.image.load(os.path.join(images.cobblestone))
             elif item == 4:
-                self.mapObject = pygame.image.load("textures\\blocks\\water\\water.png")
+                self.mapObject = pygame.image.load(os.path.join(images.water))
                 collision_rects.append(pygame.Rect(x, y, 50, 50))
             elif item == 5:
-                self.mapObject = pygame.image.load("textures\\blocks\\grass\\grasssidefull.png")
+                self.mapObject = pygame.image.load(os.path.join(images.dirt))
+                collision_rects.append(pygame.Rect(x, y, 50, 50))
+            elif item == 6:
+                self.mapObject = pygame.image.load(os.path.join(images.stair_side))
+                collision_rects.append(pygame.Rect(x, y, 50, 50))
+            elif item == 7:
+                self.mapObject = pygame.image.load(os.path.join(images.stair_top))
+                collision_rects.append(pygame.Rect(x, y, 50, 50))
+            elif item == 8:
+                self.mapObject = pygame.image.load(os.path.join(images.log_top))
+                collision_rects.append(pygame.Rect(x, y, 50, 50))
+            elif item == 9:
+                self.mapObject = pygame.image.load(os.path.join(images.log_side))
+                collision_rects.append(pygame.Rect(x, y, 50, 50))
+            elif item == 0:
+                self.mapObject = pygame.image.load(os.path.join(images.leaves_side))
+                collision_rects.append(pygame.Rect(x, y, 50, 50))
+            elif item == 10:
+                self.mapObject = pygame.image.load(os.path.join(images.leaves_top))
                 collision_rects.append(pygame.Rect(x, y, 50, 50))
             display_surface.blit(self.mapObject, (x, y))
             x += 50
@@ -72,7 +92,7 @@ class Player(pygame.sprite.Sprite):
         self.map_x = 1
         self.map_y = 1
         self.direction = pygame.Vector2()
-        self.image = pygame.image.load("textures\\player\\playerdown\\playerdown1.png").convert_alpha()
+        self.image = pygame.image.load(images.player_idle).convert_alpha()
         self.rect = self.image.get_rect(center = (WINDOW_WIDTH/2, WINDOW_HEIGHT/2))
         
     
@@ -145,41 +165,41 @@ class Player(pygame.sprite.Sprite):
         # Animation State Check
         if is_even(animationState):
             if self.facing == "right":
-                self.image = pygame.image.load("textures\\player\\playerright\\playerright1.png").convert_alpha()
+                self.image = pygame.image.load(images.player_right_1).convert_alpha()
             elif self.facing == "left":
-                self.image = pygame.image.load("textures\\player\\playerleft\\playerleft1.png").convert_alpha()
+                self.image = pygame.image.load(images.player_left_1).convert_alpha()
             elif self.facing == "up":
-                self.image = pygame.image.load("textures\\player\\playerup\\playerup1.png").convert_alpha()
+                self.image = pygame.image.load(images.player_up_1).convert_alpha()
             elif self.facing == "down":
-                self.image = pygame.image.load("textures\\player\\playerdown\\playerdown1.png").convert_alpha()
+                self.image = pygame.image.load(images.player_down_1).convert_alpha()
             else:
-                self.image = pygame.image.load("textures\\player\\idle\\idle.png").convert_alpha()
+                self.image = pygame.image.load(images.player_idle).convert_alpha()
         # If the animation state is odd, do a different animation
         else:
             if self.facing == "right":
-                self.image = pygame.image.load("textures\\player\\playerright\\playerright2.png").convert_alpha()
+                self.image = pygame.image.load(images.player_right_2).convert_alpha()
             elif self.facing == "left":
-                self.image = pygame.image.load("textures\\player\\playerleft\\playerleft2.png").convert_alpha()
+                self.image = pygame.image.load(images.player_left_2).convert_alpha()
             elif self.facing == "up":
-                self.image = pygame.image.load("textures\\player\\playerup\\playerup2.png").convert_alpha()
+                self.image = pygame.image.load(images.player_up_2).convert_alpha()
             elif self.facing == "down":
-                self.image = pygame.image.load("textures\\player\\playerdown\\playerdown2.png").convert_alpha()
+                self.image = pygame.image.load(images.player_down_2).convert_alpha()
             else:
-                self.image = pygame.image.load("textures\\player\\idle\\idle.png").convert_alpha()
+                self.image = pygame.image.load(images.player_idle).convert_alpha()
     
     def map_movement(self):
-        if self.rect.x > 450:
+        if self.rect.x > 460:
             self.map_x += 1
-            self.rect.x = 5
+            self.rect.x = 2
         elif self.rect.x < 0:
             self.map_x -= 1
-            self.rect.x = 445
-        elif self.rect.y > 450:
+            self.rect.x = 458
+        elif self.rect.y > 460:
             self.map_y += 1
-            self.rect.y = 5
+            self.rect.y = 2
         elif self.rect.y < 0:
             self.map_y -= 1
-            self.rect.y =  445
+            self.rect.y =  458
         return self.map_x, self.map_y
             
     
@@ -195,7 +215,7 @@ class Hotbar(pygame.sprite.Sprite):
         self.x = 0
         self.y = 480
         self.direction = pygame.Vector2()
-        self.image = pygame.image.load("textures\\inventory\\hotbar.png")
+        self.image = pygame.image.load(images.hotbar_image)
         self.rect = self.image.get_rect(center = (WINDOW_WIDTH/2, WINDOW_HEIGHT-33))
 
 
@@ -215,8 +235,7 @@ map = Map()
 all_sprites.add(hotbar)
 all_sprites.add(player)
 
-pygame.mixer.music.load("sounds\\Music\\world_explore_main.wav")
-pygame.mixer.music.play(-1)
+
 # Game Loop
 #current_map = map_check()
 while running:
