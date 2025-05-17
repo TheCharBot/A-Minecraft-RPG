@@ -160,6 +160,9 @@ class Player(pygame.sprite.Sprite):
         if pygame.key.get_just_pressed()[pygame.K_f]:
             print("F key just pressed")  
 
+        # Checking for E key getting pressed (to open inventory)
+        if pygame.key.get_just_pressed()[pygame.K_e]:
+                print("E key just pressed")
     # Animation function
     def animate(self):
         # Animation State Check
@@ -217,6 +220,7 @@ class Hotbar(pygame.sprite.Sprite):
         self.direction = pygame.Vector2()
         self.image = pygame.image.load(images.hotbar_image)
         self.rect = self.image.get_rect(center = (WINDOW_WIDTH/2, WINDOW_HEIGHT-33))
+    
 
 
 # Even Number Finder
@@ -247,6 +251,8 @@ while running:
             running = False
         elif event.type == ANIMATION_STATE_TRIGGER:
             animationState +=1
+        
+            
     
     mapCoords = player.map_movement()
     # Update sprites

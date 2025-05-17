@@ -20,11 +20,24 @@ water = os.path.join("textures", "blocks", "water", "water.png")
 dirt = os.path.join("textures", "blocks", "grass", "dirt.png")
 stair_side = os.path.join("textures", "blocks", "stairs", "stairside.png")
 stair_top = os.path.join("textures", "blocks", "stairs", "stairtop.png")
-log_top = os.path.join("textures", "blocks", "oak_log", "logtop.png")
-log_side = os.path.join("textures", "blocks", "oak_log", "logside.png")
+log_top = os.path.join("textures", "blocks", "wood", "logtop.png")
+log_side = os.path.join("textures", "blocks", "wood", "logside.png")
 leaves_side = os.path.join("textures", "blocks", "leaves", "leavesside.png")
 leaves_top = os.path.join("textures", "blocks", "leaves", "leavestop.png")
+planks_side = os.path.join("textures", "blocks", "wood", "planksside.png")
+planks_top = os.path.join("textures", "blocks", "wood", "plankstop.png")
 
-### HOTBAR IMAGE ###
+
+### INVENTORY IMAGES ###
 
 hotbar_image = os.path.join("textures", "inventory", "hotbar.png")
+inventory_image = os.path.join("textures", "inventory", "itempage.png")
+
+### ITEMS ###
+
+wood_sword_image = os.path.join("textures", "items", "swords", "wood_sword.png")
+stone_sword_image = os.path.join("textures", "items", "swords", "stone_sword.png")
+iron_sword_image = os.path.join("textures", "items", "swords", "iron_sword.png")
+gold_sword_image = os.path.join("textures", "items", "swords", "gold_sword.png")
+diamond_sword_image = os.path.join("textures", "items", "swords", "diamond_sword.png")
+netherite_sword_image = os.path.join("textures", "items", "swords", "netherite_sword.png")

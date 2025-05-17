@@ -1,25 +1,20 @@
+import images
 
-my_info = {
-    "name": "Alice",
-    "age": 30,
-    "city": "New York",
-    "occupation": "Engineer"
-}
 
 wood_sword = {"damage": 1, 
-              "image": "textures\\items\\swords\\wood_sword.png"}
+              "image": images.wood_sword_image}
 
 stone_sword = {"damage": 2, 
-               "image": "textures\\items\\swords\\stone_sword.png"}
+               "image": images.stone_sword_image}
 
 iron_sword = {"damage": 3,
-              "image": "textures\\items\\swords\\iron_sword.png"}
+              "image": images.iron_sword_image}
 
-gold_sword = {"damage": 2.5,
-              "image": "textures\\items\\swords\\gold_sword.png"}
+gold_sword = {"damage": 2,
+              "image": images.gold_sword_image}
 
 diamond_sword = {"damage": 4,
-                 "image": "textures\\items\\swords\\diamond_sword.png"}
+                 "image": images.diamond_sword_image}
 
 netherite_sword = {"damage": 5,
-                   "image": "textures\\items\\swords\\netherite_sword.png"}
+                   "image": images.netherite_sword_image}
