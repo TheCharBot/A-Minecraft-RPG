@@ -22,7 +22,7 @@ animationState = 1
 
 collision_rects = []
 
-# Map Drawing Functio
+# Map Drawing Function
 class Map(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
