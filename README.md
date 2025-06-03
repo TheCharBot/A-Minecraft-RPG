@@ -55,4 +55,11 @@ And, Mini-Bosses:
 8. Enderman  
 9. Great Hog
 
+# Installation and playing:  
+1. Make sure you have Python 3, pygame, and pygame-ce installed  
+2. Download the latest release
+3. Extract the folder and navigate to the RUNME.py file  
+4. Right click RUNME.py and choose "Open With" then choose Python  
+5. If it doesn't automatically open, double click RUNME.py after completing step 4  
+
 
