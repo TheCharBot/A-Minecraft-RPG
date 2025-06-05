@@ -1,13 +1,11 @@
 import pygame
-import source.Maps as Maps
-#import Items
 import os
-#import config
+import source.maps as Maps
 import source.images as images
 
 # Setup
 pygame.init()
-WINDOW_WIDTH, WINDOW_HEIGHT = 500, 567
+WINDOW_WIDTH, WINDOW_HEIGHT = 800, 867
 display_surface = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
 pygame.display.set_caption("A Minecraft RPG")
 
@@ -32,12 +30,14 @@ class Map(pygame.sprite.Sprite):
             self.current_map = Maps.a1
             collision_rects.clear()
         elif map_x==1 and map_y == 2:
-            self.current_map = Maps.a2
-            collision_rects.clear()
-        elif map_x==2 and map_y==1:
             self.current_map = Maps.b1
             collision_rects.clear()
-        
+        elif map_x==2 and map_y==1:
+            self.current_map = Maps.a2
+            collision_rects.clear()
+        elif map_x==2 and map_y == 2:
+            self.current_map = Maps.b2
+            collision_rects.clear()
 
     
         x = 0
@@ -74,9 +74,15 @@ class Map(pygame.sprite.Sprite):
             elif item == 10:
                 self.mapObject = pygame.image.load(os.path.join(images.leaves_top))
                 collision_rects.append(pygame.Rect(x, y, 50, 50))
+            elif item == 11:
+                self.mapObject = pygame.image.load(os.path.join(images.planks_side))
+                collision_rects.append(pygame.Rect(x, y, 50, 50))
+            elif item == 12:
+                self.mapObject = pygame.image.load(os.path.join(images.planks_top))
+                collision_rects.append(pygame.Rect(x, y, 50, 50))
             display_surface.blit(self.mapObject, (x, y))
             x += 50
-            if x == 500 or x >= 500:
+            if x == 800 or x >= 800:
                 y += 50
                 x = 0
 class Player(pygame.sprite.Sprite):
@@ -191,18 +197,18 @@ class Player(pygame.sprite.Sprite):
                 self.image = pygame.image.load(images.player_idle).convert_alpha()
     
     def map_movement(self):
-        if self.rect.x > 460:
+        if self.rect.x > 760:
             self.map_x += 1
             self.rect.x = 2
         elif self.rect.x < 0:
             self.map_x -= 1
-            self.rect.x = 458
-        elif self.rect.y > 460:
+            self.rect.x = 758
+        elif self.rect.y > 760:
             self.map_y += 1
             self.rect.y = 2
         elif self.rect.y < 0:
             self.map_y -= 1
-            self.rect.y =  458
+            self.rect.y =  758
         return self.map_x, self.map_y
             
     
@@ -251,7 +257,6 @@ while running:
             running = False
         elif event.type == ANIMATION_STATE_TRIGGER:
             animationState +=1
-        
             
     
     mapCoords = player.map_movement()
