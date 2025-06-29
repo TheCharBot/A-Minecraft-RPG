@@ -26,8 +26,8 @@ The dungeons are as follows:
 4. The Creeper Farm
 5. The Woodland Mansion
 6. The Ghast Bridge
-7. Steve's World
-8. Piglin Raid  
+7. Steve's World  
+8. The Piglin Raid  
    Then the battle for the staff of dominance  
    After that, the battle for the Orb of Dominance
 10. (Optional) The End
@@ -37,12 +37,12 @@ Bosses (respective to the order of dungeons):
 2. Redstone Heart
 3. Diamond Shell Enderman
 4. Omega Creeper
-5. Hell Ghast  
-6. Lava Chicken
-7. General Chungus
-8. Chicken Jockey
-9.  (Optional) Ender Dragon
-10.  Malgosha
+5. Chicken Jockey
+6. Hell Ghast  
+7. Lava Chicken  
+8. General Chungus  
+9.  (Optional) Ender Dragon  
+10.  Malgosha  
 
 And, Mini-Bosses:  
 1. Diamond Armor Zombie  
