@@ -15,6 +15,16 @@ Potential Changes(in the far future):
 1. Collision System  
 2. Map Movement System  
 
+
+
+# Lore:
+20 years after the events of _A Minecraft Movie,_ Steve returns to the Overworld. Not remembering the dangers of Minecraft, he stumbles into the End Dimension and is overwhelmed by the dark magic at work.  
+He loses consciuosness and wakes up back in the overworld, thinking all is normal, then realizing his memory was erased.  
+With no knowledge of where he is, who he is, or how he got to the overworld, he is terrified of what he might have done to cause this.  
+While he thinks all is lost, there is one thing he can remember:  
+**"_The Orb! Bring back the Orb!_"**  
+Now, he must figure everything out from the ground up, starting with who he is . . . or _was_  
+
 # Plot:
 
 There are a total of 8 (main) Dungeons in the game, each holding a piece of the orb of dominance. Once all of the pieces have been put together, the Orb of Dominance is created.
