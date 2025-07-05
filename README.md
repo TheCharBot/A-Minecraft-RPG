@@ -18,7 +18,7 @@ Potential Changes(in the far future):
 
 
 # Lore:  
-_A Minecraft RPG_ follows a similar plot to _A Mincraft Movie_, with only a cuple of small things changed, most for the enjoyment of the game.  
+_A Minecraft RPG_ follows a similar plot to _A Minecraft Movie_, with only a couple of small things changed, most for the enjoyment of the game.  
 
 # Plot:
 
