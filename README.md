@@ -54,14 +54,14 @@ And, Mini-Bosses:
 2. Redstone Golem  
 3. Minecart Monster
 4. Giga Creeper
-5. Battle Ghast
-6. Clown Golem
-7. Piglin Brute
+5. Clown Golem  
+6. Battle Ghast  
+7. Piglin Brute  
 8. Enderman  
 9. Great Hog
 
 # Installation and playing:  
-1. Make sure you have Python 3, pygame, and pygame-ce installed  
+1. Make sure you have Python 3.8+ and pygame installed  
 2. Download the latest release
 3. Extract the folder and navigate to the RUNME.py file  
 4. Right click RUNME.py and choose "Open With" then choose Python  
