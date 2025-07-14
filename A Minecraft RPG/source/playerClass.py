@@ -96,19 +96,19 @@ class Player(config.pygame.sprite.Sprite):
         ### Attacking and Placing ###
 
         # Checking for X key getting pressed
-        if config.pygame.key.get_just_pressed()[config.pygame.K_x]:
+        if config.pygame.key.get_pressed()[config.pygame.K_x]:
             self.x_pressed = True
             print("X key just pressed")
         # Checking for Z key getting pressed
-        if config.pygame.key.get_just_pressed()[config.pygame.K_z]:
+        if config.pygame.key.get_pressed()[config.pygame.K_z]:
             print("Z key just pressed")
         
         # Checking for F key getting pressed (to switch the off hand item with the X or Z key items)
-        if config.pygame.key.get_just_pressed()[config.pygame.K_f]:
+        if config.pygame.key.get_pressed()[config.pygame.K_f]:
             print("F key just pressed")  
 
         # Checking for E key getting pressed (to open inventory)
-        if config.pygame.key.get_just_pressed()[config.pygame.K_e]:
+        if config.pygame.key.get_pressed()[config.pygame.K_e]:
             print("E key just pressed")
 
         for rect in config.interact_rects:
