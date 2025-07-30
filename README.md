@@ -61,7 +61,7 @@ And, Mini-Bosses:
 9. Great Hog
 
 # Installation and playing:  
-1. Make sure you have Python 3.8+, pygame, and pygame-ce installed  
+1. Make sure you have Python 3.8+, pygame, and pygame-ce installed(https://www.python.org/, https://www.pygame.org/news, https://pypi.org/project/pygame-ce/)  
 2. Download the latest release
 3. Extract the folder and navigate to the RUNME.py file  
 4. Right click RUNME.py and choose "Open With" then choose Python  
