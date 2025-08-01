@@ -1,6 +1,6 @@
 # A Minecraft RPG
-source code and assets for A Minecraft RPG Game
-project was compiled using Auto-py-to-exe(https://pypi.org/project/auto-py-to-exe/)  
+source code and assets for A Minecraft RPG Game.  
+This project was compiled using Auto-py-to-exe(https://pypi.org/project/auto-py-to-exe/)  
 # Game Layout and Roadmap:
 
 A Minecraft RPG is a 2D top-down Zelda-like RPG game based on A Minecraft Movie.  
