@@ -10,6 +10,7 @@ Next Up In Developement:
 1. Handheld Items and Inventory System  
 2. Soundtrack and SFX  
 4. Cutscene / Dialogue System  
+5. Possible GFX Change  
 
 Potential Changes(in the far future):
 1. Collision System  
