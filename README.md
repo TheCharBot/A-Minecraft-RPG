@@ -1,6 +1,8 @@
 # A Minecraft RPG
 source code and assets for A Minecraft RPG Game.  
-This project was compiled using Auto-py-to-exe(https://pypi.org/project/auto-py-to-exe/)  
+This project was compiled using Auto-py-to-exe(https://pypi.org/project/auto-py-to-exe/) And uses Tiled for making maps  
+https://www.mapeditor.org/  
+
 # Game Layout and Roadmap:
 
 A Minecraft RPG is a 2D top-down Zelda-like RPG game based on A Minecraft Movie.  
@@ -62,7 +64,7 @@ And, Mini-Bosses:
 9. Great Hog
 
 # Installation and playing:  
-1. Make sure you have Python 3.8+, pygame, and pygame-ce installed(https://www.python.org/, https://www.pygame.org/news, https://pypi.org/project/pygame-ce/)  
+1. Make sure you have Python 3.9+, pygame, pygame-ce, pytmx, and pyscroll installed(https://www.python.org/, https://www.pygame.org/news, https://pypi.org/project/pygame-ce/, https://pypi.org/project/pyscroll/, https://pypi.org/project/PyTMX/)  
 2. Download the latest release
 3. Extract the folder and navigate to the RUNME.py file  
 4. Right click RUNME.py and choose "Open With" then choose Python  
